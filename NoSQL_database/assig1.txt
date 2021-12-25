@@ -1,0 +1,655 @@
+> db.Film.find({},{}).pretty();
+{
+        "_id" : ObjectId("61c32e029b862dead83b384b"),
+        "film id" : 101,
+        "title" : "saaho",
+        "year of release" : 2019,
+        "genre" : [
+                "action",
+                "adventure"
+        ],
+        "actors" : [
+                {
+                        "fname" : "prabhas",
+                        "lname" : "india"
+                },
+                {
+                        "fname" : "jacqueline",
+                        "lname" : "fernandes"
+                }
+        ],
+        "directors" : [
+                {
+                        "fname" : "karan",
+                        "lname" : "johar"
+                },
+                {
+                        "fname" : "steve",
+                        "lname" : "smith"
+                }
+        ],
+        "release details" : [
+                {
+                        "places of release" : [
+                                "mumbai",
+                                "pune",
+                                "nashik"
+                        ]
+                },
+                {
+                        "dates" : [
+                                "1/1/2019",
+                                "2/2/2020"
+                        ]
+                },
+                {
+                        "rating of film" : 4.5
+                }
+        ]
+}
+{
+        "_id" : ObjectId("61c32e029b862dead83b384c"),
+        "film id" : 102,
+        "title" : "Tanaji",
+        "year of release" : 2020,
+        "genre" : [
+                "action",
+                "adventure",
+                "comedy"
+        ],
+        "actors" : [
+                {
+                        "fname" : "Sahil Ali",
+                        "lname" : "Khan"
+                },
+                {
+                        "fname" : "Ajay",
+                        "lname" : "Devgan"
+                }
+        ],
+        "directors" : [
+                {
+                        "fname" : "karan",
+                        "lname" : "johar"
+                },
+                {
+                        "fname" : "Om",
+                        "lname" : "Ravt"
+                }
+        ],
+        "release details" : [
+                {
+                        "places of release" : [
+                                "mumbai",
+                                "pune",
+                                "nashik"
+                        ]
+                },
+                {
+                        "dates" : [
+                                "1/1/2019",
+                                "2/2/2020"
+                        ]
+                },
+                {
+                        "rating of film" : 6.2
+                }
+        ]
+}
+{
+        "_id" : ObjectId("61c32e029b862dead83b384d"),
+        "film id" : 103,
+        "title" : "Bhool Bhulayaa",
+        "year of release" : 2007,
+        "genre" : [
+                "action",
+                "adventure",
+                "Thriller",
+                "Comedy"
+        ],
+        "actors" : [
+                {
+                        "fname" : "Akashya",
+                        "lname" : "Kumar"
+                },
+                {
+                        "fname" : "Rajpal",
+                        "lname" : "Yadav"
+                }
+        ],
+        "directors" : [
+                {
+                        "fname" : "Priyadarshan"
+                }
+        ],
+        "release details" : [
+                {
+                        "places of release" : [
+                                "mumbai",
+                                "pune",
+                                "nashik"
+                        ]
+                },
+                {
+                        "dates" : [
+                                "1/1/2007",
+                                "2/2/2007"
+                        ]
+                },
+                {
+                        "rating of film" : 8
+                }
+        ]
+}
+{
+        "_id" : ObjectId("61c32e029b862dead83b384e"),
+        "film id" : 104,
+        "title" : "Super 30",
+        "year of release" : 2019,
+        "genre" : [
+                "action",
+                "drama",
+                "Thriller"
+        ],
+        "actors" : [
+                {
+                        "fname" : "Hrithik",
+                        "lname" : "Roshan"
+                },
+                {
+                        "fname" : "Pankaj",
+                        "lname" : "Tripathi"
+                }
+        ],
+        "directors" : [
+                {
+                        "fname" : "Vikas",
+                        "lname" : "Bahi"
+                }
+        ],
+        "release details" : [
+                {
+                        "places of release" : [
+                                "mumbai",
+                                "pune",
+                                "nashik"
+                        ]
+                },
+                {
+                        "dates" : [
+                                "1/1/2019",
+                                "2/2/2020"
+                        ]
+                },
+                {
+                        "rating of film" : 8.5
+                }
+        ]
+}
+{
+        "_id" : ObjectId("61c32e029b862dead83b384f"),
+        "film id" : 105,
+        "title" : "saaho",
+        "year of release" : 2019,
+        "genre" : [
+                "action",
+                "adventure",
+                "comedy"
+        ],
+        "actors" : [
+                {
+                        "fname" : "prabhas",
+                        "lname" : "india"
+                },
+                {
+                        "fname" : "jacqueline",
+                        "lname" : "fernandes"
+                }
+        ],
+        "directors" : [
+                {
+                        "fname" : "karan",
+                        "lname" : "johar"
+                },
+                {
+                        "fname" : "steve",
+                        "lname" : "smith"
+                }
+        ],
+        "release details" : [
+                {
+                        "places of release" : [
+                                "mumbai",
+                                "pune",
+                                "nashik"
+                        ]
+                },
+                {
+                        "dates" : [
+                                "1/1/2019",
+                                "2/2/2020"
+                        ]
+                },
+                {
+                        "rating of film" : 4
+                }
+        ]
+}
+{
+        "_id" : ObjectId("61c32e029b862dead83b3850"),
+        "film id" : 106,
+        "title" : "saaho",
+        "year of release" : 2019,
+        "genre" : [
+                "action",
+                "adventure"
+        ],
+        "actors" : [
+                {
+                        "fname" : "prabhas",
+                        "lname" : "india"
+                },
+                {
+                        "fname" : "jacqueline",
+                        "lname" : "fernandes"
+                }
+        ],
+        "directors" : [
+                {
+                        "fname" : "karan",
+                        "lname" : "johar"
+                },
+                {
+                        "fname" : "steve",
+                        "lname" : "smith"
+                }
+        ],
+        "release details" : [
+                {
+                        "places of release" : [
+                                "mumbai",
+                                "pune",
+                                "nashik"
+                        ]
+                },
+                {
+                        "dates" : [
+                                "1/1/2019",
+                                "2/2/2020"
+                        ]
+                },
+                {
+                        "rating of film" : 6.5
+                }
+        ]
+}
+{
+        "_id" : ObjectId("61c32e029b862dead83b3851"),
+        "film id" : 107,
+        "title" : "Tejab",
+        "year of release" : 2010,
+        "genre" : [
+                "action",
+                "adventure"
+        ],
+        "actors" : [
+                {
+                        "fname" : "prabhas",
+                        "lname" : "india"
+                },
+                {
+                        "fname" : "jacqueline",
+                        "lname" : "fernandes"
+                }
+        ],
+        "directors" : [
+                {
+                        "fname" : "karan",
+                        "lname" : "johar"
+                },
+                {
+                        "fname" : "steve",
+                        "lname" : "smith"
+                }
+        ],
+        "release details" : [
+                {
+                        "places of release" : [
+                                "mumbai",
+                                "pune",
+                                "nashik"
+                        ]
+                },
+                {
+                        "dates" : [
+                                "1/1/2019",
+                                "2/2/2020"
+                        ]
+                },
+                {
+                        "rating of film" : 7.2
+                }
+        ]
+}
+{
+        "_id" : ObjectId("61c32e029b862dead83b3852"),
+        "film id" : 108,
+        "title" : "Anari",
+        "year of release" : 1993,
+        "genre" : [
+                "action",
+                "adventure",
+                "comedy"
+        ],
+        "actors" : [
+                {
+                        "fname" : "Daggubati",
+                        "lname" : "Venkatesh"
+                },
+                {
+                        "fname" : "Johnny",
+                        "lname" : "Lever"
+                }
+        ],
+        "directors" : [
+                {
+                        "fname" : "afaf",
+                        "lname" : "dfaf"
+                },
+                {
+                        "fname" : "adf",
+                        "lname" : "adf"
+                }
+        ],
+        "release details" : [
+                {
+                        "places of release" : [
+                                "mumbai",
+                                "pune",
+                                "nashik"
+                        ]
+                },
+                {
+                        "dates" : [
+                                "1/1/1993",
+                                "2/2/1993"
+                        ]
+                },
+                {
+                        "rating of film" : 6.8
+                }
+        ]
+}
+{
+        "_id" : ObjectId("61c32e029b862dead83b3853"),
+        "film id" : 109,
+        "title" : "rakt",
+        "year of release" : 2009,
+        "genre" : [
+                "action",
+                "adventure"
+        ],
+        "actors" : [
+                {
+                        "fname" : "prabhas",
+                        "lname" : "india"
+                },
+                {
+                        "fname" : "jacqueline",
+                        "lname" : "fernandes"
+                }
+        ],
+        "directors" : [
+                {
+                        "fname" : "karan",
+                        "lname" : "johar"
+                },
+                {
+                        "fname" : "steve",
+                        "lname" : "smith"
+                }
+        ],
+        "release details" : [
+                {
+                        "places of release" : [
+                                "mumbai",
+                                "pune",
+                                "nashik"
+                        ]
+                },
+                {
+                        "dates" : [
+                                "1/1/2009",
+                                "2/2/2011"
+                        ]
+                },
+                {
+                        "rating of film" : 4
+                }
+        ]
+}
+{
+        "_id" : ObjectId("61c32e029b862dead83b3854"),
+        "film id" : 110,
+        "title" : "Swarg",
+        "year of release" : 1990,
+        "genre" : [
+                "action",
+                "comedy",
+                "Thriller",
+                "family"
+        ],
+        "actors" : [
+                {
+                        "fname" : "Rajesh",
+                        "lname" : "Kumar"
+                },
+                {
+                        "fname" : "Juhi",
+                        "lname" : "ChawLA"
+                }
+        ],
+        "directors" : [
+                {
+                        "fname" : "DAVID",
+                        "lname" : "Dhawan"
+                }
+        ],
+        "release details" : [
+                {
+                        "places of release" : [
+                                "mumbai",
+                                "pune",
+                                "nashik"
+                        ]
+                },
+                {
+                        "dates" : [
+                                "1/1/1990",
+                                "2/2/1990"
+                        ]
+                },
+                {
+                        "rating of film" : 4
+                }
+        ]
+}
+   
+{
+        "_id" : ObjectId("61c32fb69b862dead83b3855"),
+        "actor id" : 1,
+        "fname" : "aamir",
+        "lname" : "khan",
+        "address" : {
+                "street" : "wall street",
+                "city" : "new york",
+                "state" : "mid state",
+                "country" : "usa",
+                "pincode" : "62201"
+        },
+        "contact details" : {
+                "emailid" : "sallu@gmail.com",
+                "phonene" : "12345678"
+        },
+        "age" : "49"
+}
+{
+        "_id" : ObjectId("61c32fb69b862dead83b3856"),
+        "actor id" : 2,
+        "fname" : "Ajay",
+        "lname" : "Devgan",
+        "address" : {
+                "street" : "wall street",
+                "city" : "new york",
+                "state" : "mid state",
+                "country" : "usa",
+                "pincode" : "62201"
+        },
+        "contact details" : {
+                "emailid" : "devgan@gmail.com",
+                "phonene" : "12345678"
+        },
+        "age" : "55"
+}
+{
+        "_id" : ObjectId("61c32fb69b862dead83b3857"),
+        "actor id" : 3,
+        "fname" : "Prabhas",
+        "lname" : "india",
+        "address" : {
+                "street" : "wall street",
+                "city" : "new york",
+                "state" : "mid state",
+                "country" : "usa",
+                "pincode" : "62201"
+        },
+        "contact details" : {
+                "emailid" : "prabhas@gmail.com",
+                "phonene" : "12345678"
+        },
+        "age" : "39"
+}
+{
+        "_id" : ObjectId("61c32fb69b862dead83b3858"),
+        "actor id" : 4,
+        "fname" : "Pankaj",
+        "lname" : "Tripathi",
+        "address" : {
+                "street" : "wall street",
+                "city" : "new york",
+                "state" : "mid state",
+                "country" : "usa",
+                "pincode" : "62201"
+        },
+        "contact details" : {
+                "emailid" : "sallu@gmail.com",
+                "phonene" : "12345678"
+        },
+        "age" : "46"
+}
+{
+        "_id" : ObjectId("61c32fb69b862dead83b3859"),
+        "actor id" : 5,
+        "fname" : "Amitab",
+        "lname" : "Bachan",
+        "address" : {
+                "street" : "wall street",
+                "city" : "new york",
+                "state" : "mid state",
+                "country" : "usa",
+                "pincode" : "62201"
+        },
+        "contact details" : {
+                "emailid" : "sallu@gmail.com",
+                "phonene" : "12345678"
+        },
+        "age" : "75"
+}
+{
+        "_id" : ObjectId("61c32fb69b862dead83b385a"),
+        "actor id" : 6,
+        "fname" : "aamir",
+        "lname" : "khan",
+        "address" : {
+                "street" : "wall street",
+                "city" : "new york",
+                "state" : "mid state",
+                "country" : "usa",
+                "pincode" : "62201"
+        },
+        "contact details" : {
+                "emailid" : "sallu@gmail.com",
+                "phonene" : "12345678"
+        }
+}
+{
+        "_id" : ObjectId("61c32fb69b862dead83b385b"),
+        "actor id" : 7,
+        "fname" : "aamir",
+        "lname" : "khan",
+        "address" : {
+                "street" : "wall street",
+                "city" : "new york",
+                "state" : "mid state",
+                "country" : "usa",
+                "pincode" : "62201"
+        },
+        "contact details" : {
+                "emailid" : "sallu@gmail.com",
+                "phonene" : "12345678"
+        }
+}
+{
+        "_id" : ObjectId("61c32fb69b862dead83b385c"),
+        "actor id" : 8,
+        "fname" : "Rajpal",
+        "lname" : "Yadav",
+        "address" : {
+                "street" : "wall street",
+                "city" : "new york",
+                "state" : "mid state",
+                "country" : "usa",
+                "pincode" : "62201"
+        },
+        "contact details" : {
+                "emailid" : "rajpal@gmail.com",
+                "phonene" : "12345678"
+        },
+        "age" : "41"
+}
+{
+        "_id" : ObjectId("61c32fb69b862dead83b385d"),
+        "actor id" : 9,
+        "fname" : "Rajesh",
+        "lname" : "Kumar",
+        "address" : {
+                "street" : "wall street",
+                "city" : "new york",
+                "state" : "mid state",
+                "country" : "usa",
+                "pincode" : "62201"
+        },
+        "contact details" : {
+                "emailid" : "Rajesh@gmail.com",
+                "phonene" : "12345678"
+        },
+        "age" : "95"
+}
+{
+        "_id" : ObjectId("61c32fb69b862dead83b385e"),
+        "actor id" : 10,
+        "fname" : "Hritik",
+        "lname" : "Roshan",
+        "address" : {
+                "street" : "wall street",
+                "city" : "new york",
+                "state" : "mid state",
+                "country" : "usa",
+                "pincode" : "62201"
+        },
+        "contact details" : {
+                "emailid" : "hrx@gmail.com",
+                "phonene" : "12345678"
+        },
+        "age" : "48"
+}
