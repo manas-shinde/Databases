@@ -1,0 +1,214 @@
+db.Transaction.insertMany([
+     {
+     "transaction id":"111",
+     "transaction date":"1/1/2019",
+     "name":"pratik",
+     "transaction details":{
+        "item id":"111",
+        "item name":"bike",
+        "quantity":5,
+        "price":55000
+     },
+     "payement": {
+         "type of payement":"cash",
+        "total amount paid":4400,
+        "payement sucessful":"true"
+    },
+     "remark":"bike purchased"
+     },
+     {
+     "transaction id":"222",
+     "transaction date":"1/1/2019",
+     "name":"pratik",
+     "transaction details":{
+         "item id":"222",
+        "item name":"cycle",
+        "quantity":5,
+        "price":55000
+    },
+     "payement":{
+        "type of payement":"creadit",
+        "total amount paid":400,
+        "payement sucessful":"false"
+     },
+     "remark":"bike purchased"
+     },
+     {
+     "transaction id":"333",
+     "transaction date":"1/1/2019",
+     "name":"pratik",
+     "transaction details":{
+        "item id":"111",
+        "item name":"bike",
+        "quantity":5,
+        "price":55000
+     },
+     "payement":{
+        "type of payement":"cash",
+        "total amount paid":4400,
+        "payement sucessful":"true"
+     },
+     "remark":"bike purchased"
+     },
+     {
+     "transaction id":"444",
+     "transaction date":"1/1/2019",
+     "name":"pratik",
+     "transaction details":{
+        "item id":"111",
+        "item name":"bike",
+        "quantity":5,
+        "price":55000
+     },
+     "payement":{
+        "type of payement":"cash",
+        "total amount paid":4400,
+        "payement sucessful":"true"
+    },
+     "remark":"bike purchased"
+     },
+     {
+     "transaction id":"555",
+     "transaction date":"1/1/2019",
+     "name":"pratik",
+     "transaction details":{
+        "item id":"111",
+        "item name":"bike",
+        "quantity":5,
+        "price":55000
+     },
+     "payement":{
+        "type of payement":"cash",
+        "total amount paid":4400,
+        "payement sucessful":"true"
+     },
+     "remark":"bike purchased"
+     },
+     {
+     "transaction id":"666",
+     "transaction date":"1/1/2019",
+     "name":"pratik",
+     "transaction details":{
+        "item id":"111",
+        "item name":"bike",
+        "quantity":5,
+        "price":55000
+     },
+     "payement":{
+        "type of payement":"cash",
+        "total amount paid":4400,
+        "payement sucessful":"true"
+     },
+     "remark":"bike purchased"
+     },
+     {
+     "transaction id":"777",
+     "transaction date":"1/1/2019",
+     "name":"salman",
+     "transaction details":{
+        "item id":"333",
+        "item name":"soap",
+        "quantity":3,
+        "price":55000
+     },
+     "payement":{
+        "type of payement":"cash",
+        "total amount paid":9800,
+        "payement sucessful":"false"
+     },
+     "remark":"bike purchased"
+     },
+     {
+     "transaction id":"888",
+     "transaction date":"1/1/2019",
+     "name":"pratik",
+     "transaction details":{
+        "item id":"111",
+        "item name":"bike",
+        "quantity":5,
+        "price":55000
+     },
+     "payement":{
+        "type of payement":"cash",
+        "total amount paid":4400,
+        "payement sucessful":"true"
+    },
+     "remark":"bike purchased"
+     },
+     {
+     "transaction id":"999",
+     "transaction date":"1/1/2019",
+     "name":"pratik",
+     "transaction details":{
+        "item id":"111",
+        "item name":"bike",
+        "quantity":5,
+        "price":55000
+     },
+     "payement":{
+        "type of payement":"cash",
+        "total amount paid":4400,
+        "payement sucessful":"true"
+     },
+     "remark":"bike purchased"
+     },
+     {
+     "transaction id":"1000",
+     "transaction date":"1/1/2019",
+     "name":"pratik",
+     "transaction details":{
+     "item id":"111",
+     "item name":"bike",
+     "quantity":5,
+     "price":55000
+     },
+     "payement":{
+     "type of payement":"cash",
+     "total amount paid":4400,
+     "payement sucessful":"true"
+    },
+     "remark":"bike purchased"
+     },
+    
+     
+     ]
+)
+
+----------------------------------------------------------------------------------------------------------------------------
+Queries:
+----------------------------------------------------------------------------------------------------------------------------
+
+Q. Update salary of all employees by giving an increment of Rs. 4000.
+
+	>db.Employee.updateMany({},{$inc:{salary:4000}})
+----------------------------------------------------------------------------------------------------------------------------
+Q. Update the remark for transaction id 111.
+	> db.Transaction.updateOne({"transaction id":"111"},{$set:{remark:"Updated"}})
+	{ "acknowledged" : true, "matchedCount" : 1, "modifiedCount" : 1 }
+
+----------------------------------------------------------------------------------------------------------------------------
+Q. Update designation of an employee named “_ ” from supervisor to manager.
+	>db.Employee.updateOne({'first name' :"salman", 'last name':"khan"},{$set:{designation:"manager"}})
+	{ "acknowledged" : true, "matchedCount" : 1, "modifiedCount" : 1 }
+
+----------------------------------------------------------------------------------------------------------------------------
+Q. Update designation of an employee having Employee Id as 222.
+	> db.Employee.updateOne({"Employee ID":"222"},{$set:{'designation':"supervisior"}})
+	{ "acknowledged" : true, "matchedCount" : 1, "modifiedCount" : 1 }
+
+----------------------------------------------------------------------------------------------------------------------------
+Q. Change the address of an employee having Employee Id as 222.
+	> db.Employee.updateOne({"Employee ID":"222"},{$set:{'address.house no':11,'address.street':"updated",'address.city':"updated",'address.state':"updated",'address.country':"upadted",'address.pin code':1234}})
+	{ "acknowledged" : true, "matchedCount" : 1, "modifiedCount" : 1 }
+
+----------------------------------------------------------------------------------------------------------------------------
+Q. Delete transaction made by “ ” employee on the given date. 
+	> db.Transaction.deleteMany({'name':"manas"})
+	{ "acknowledged" : true, "deletedCount" : 1 }
+
+----------------------------------------------------------------------------------------------------------------------------
+Q. Delete all the employees whose first name starts with ‘K’.	
+	> db.Employee.deleteMany({'first name':/^p/})
+	{ "acknowledged" : true, "deletedCount" : 2 }
+
+----------------------------------------------------------------------------------------------------------------------------

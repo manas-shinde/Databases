@@ -1,0 +1,35 @@
+1. Find employees having designation as either ‘manager’ or ‘floor supervisor’
+	> db.Employee.find({$or:[{'designation':"floor supervisor"},{'designation':"manager"}]},
+		{"first name":1,"last name":1,'designation':1}).pretty();
+
+2. Find an employee whose name ends with " " and print the
+output in json format.
+	> db.Employee.find({'first name':/^s/},{'first name':1}).pretty();
+
+3. Display the name of an employee whose salary is greater than
+using a MongoDB cursor.
+	> var myEmp = db.Employee.find({'salary':{$gt:105000}})
+		> while(myEmp.hasNext()){print(tojson(myEmp.next()));}
+
+
+4. Sort the employees in the descending order of their designation
+	> db.Employee.find({},{"Employee ID":1,"first name":1,"designation":1}).sort({"designation":-1}).pretty();
+												OR
+	> db.Employee.find().sort({"designation":-1}).pretty();
+	
+5. Count the total number of employees in a collection.
+ >db.Employee.count()
+  4
+
+6. Calculate the sum of total amount paid for all the transaction documents.
+
+7. Calculate the sum of total amount paid for each payment type.
+
+8. Find the transaction id of the latest transaction.
+
+
+9. Find designation of employees who have made transaction of amount greater than
+Rs. 500.
+
+
+10. Find the total quantity of a particular item sold using Map Reduce.
