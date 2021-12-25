@@ -1,0 +1,69 @@
+Employee database
+
+CREATE(e1:employee1{name:"partik_ghole",age:35}),
+(e2:employee2{name:"amol_ghade",age:25}),
+(e3:employee3{name:"sahil_pardeshi",age:22}),
+(e4:employee4{name:"sameer_Joshi",age:28}),
+(e5:employee5{name:"varad_madivali",age:31}),
+
+(d1:department1{name:"digital_marketing"}),
+(d2:department2{name:"software_development"}),
+(d3:department3{name:"web_develpoment"}),
+
+(s1:skill1{name:"good_communication"}),
+(s2:skill2{name:"team_leading"}),
+(s3:skill3{name:"good_programmer"}),
+
+(p1:project1{name:"app locker"}),
+(p2:project2{name:"fitness website"}),
+(p3:project3{name:"milk marketing"}),
+
+(e1)-[:Works_in]->(d1),
+(e2)-[:Works_in]->(d1),
+(e3)-[:Works_in]->(d2),
+(e4)-[:Works_in]->(d2),
+(e5)-[:Works_in]->(d3),
+(e1)-[:Has_acquired]->(s1),
+(e2)-[:Has_acquired]->(s2),
+(e3)-[:Has_acquired]->(s3),
+(e1)-[:Has_acquired]->(s3),
+(e2)-[:Has_acquired]->(s2),
+(e3)-[:Has_acquired]->(s3),
+(e4)-[:Has_acquired]->(s1),
+(e5)-[:Has_acquired]->(s2),
+(e1)-[:Assigned_to]->(p1),
+(e4)-[:Assigned_to]->(p1),
+(e2)-[:Assigned_to]->(p2),
+(e3)-[:Assigned_to]->(p3),
+(e5)-[:Assigned_to]->(p3),
+(p1)-[:Controlled_by]->(d2),
+(p2)-[:Controlled_by]->(d3),
+(p3)-[:Controlled_by]->(d1),
+(e1)-[: Project_manager]->(p1),
+(e3)-[: Project_manager]->(p2),
+(e5)-[: Project_manager]->(p3)
+RETURN *
+
+------------------------------------------------------------------------------------------------------
+Queries:
+------------------------------------------------------------------------------------------------------
+
+a) List the names of employees in department “……..”
+	MATCH (emp)-[:Works_in]->(dep:department1{name:"digital_marketing"})
+	RETURN emp.name AS EMPLOYEES, dep.name AS DEPARTMENT
+------------------------------------------------------------------------------------------------------
+
+b) List the projects along with their properties, controlled by department “……”
+	MATCH (proj)-[:Controlled_by]->(dep:department2{name:"software_development"})
+	RETURN proj.name AS NAME
+------------------------------------------------------------------------------------------------------
+
+c) List the departments along with the count of employees in it
+	MATCH (emp)-[cnt:Works_in]->(dep)
+	RETURN dep.name AS DEPARTMENT , COUNT(cnt) AS NO_of_Employee
+	------------------------------------------------------------------------------------------------------
+  
+d) List the skillset for an employee “…….”
+	MATCH (emp:employee1{name:"partik_ghole"})-[:Has_acquired]->(skillset) 
+	RETURN emp.name AS EMP , skillset.name AS Skills_Acquire
+------------------------------------------------------------------------------------------------------
