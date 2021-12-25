@@ -1,0 +1,56 @@
+
+2. Song Database:
+
+CREATE(ar1:artist1{name:"Shreya_Ghoshal",dob:"1-11-1996",city:"Mumbai"}),
+(ar2:artist2{name:"Arjit_Singh",dob:"1-10-1985",city:"Pune"}),
+(ar3:artist3{name:"Sonu_Nigam",dob:"15-05-1992",city:"Delhi"}),
+(s1:song1{title:"Tera naam"}),
+(s2:song2{title:"Kall ho na hoo"}),
+(s3:song3{title:"Gangster"}),
+(a1:songAuthor1{name:"Gulzaar"}),
+(a2:songAuthor2{name:"Mithun"}),
+(a3:songAuthor3{name:"Shailendra"}),
+(st1:studio1{name:"Hydrogen"}),
+(st2:studio2{name:"Oxygen"}),
+(c1:RCompany1{name:"Sony"}),
+(c2:RCompany2{name:"T-series"}),
+
+(ar1)-[:PERFORMS]->(s1),
+(ar2)-[:PERFORMS]->(s2),
+(ar3)-[:PERFORMS]->(s3),
+(s1)-[:WRITTEN_BY]->(a1),
+(s2)-[:WRITTEN_BY]->(a2),
+(s3)-[:WRITTEN_BY]->(a3),
+(s1)-[:RECORED_IN]->(st1),
+(s2)-[:RECORED_IN]->(st2),
+(s3)-[:RECORED_IN]->(st2),
+(st1)-[:MANAGED_BY]->(c1),
+(st2)-[:MANAGED_BY]->(c2),
+(c1)-[:FINANCE]->(s1),
+(c1)-[:FINANCE]->(s2),
+(c2)-[:FINANCE]->(s3)
+
+RETURN *
+
+____________________________________________________________________________________________________________________________________________
+Queries:
+____________________________________________________________________________________________________________________________________________
+a) List the names of songs written by “:…..”
+	MATCH (songs)-[:WRITTEN_BY]->(a1:songAuthor1{name:"Gulzaar"}) 
+	RETURN songs.title AS Songs,a1.name
+------------------------------------------------------------------------------------------------------------------------------------------
+b) List the names of record companies who have financed for the song “….”
+	MATCH (company)-[:FINANCE]->(s1:song1)
+	RETURN  company,s1
+
+------------------------------------------------------------------------------------------------------------------------------------------
+c) List the names of artist performing the song “…..”
+	MATCH (artist)-[:PERFORMS]->(song:song2{title:"Kall ho na hoo"})
+	RETURN  artist.name , song.title
+
+------------------------------------------------------------------------------------------------------------------------------------------
+d) Name the songs recorded by the studio “ …….”
+	MATCH (songs)-[:RECORED_IN]->(st:studio2{name:"Oxygen"})
+	RETURN songs.title AS SONGS , st.name AS STUDIO
+  
+------------------------------------------------------------------------------------------------------------------------------------------
