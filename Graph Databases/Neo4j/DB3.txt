@@ -1,0 +1,77 @@
+a movie database
+
+CREATE (a1:actor1{name:"ShahRukh_Khan",age:50}),
+(a2:actor2{name:"Madhuri_Dixit",age:45}),
+(a3:actor3{name:"Ashvarya Bachhan",age:43}),
+(a4:actor4{name:"Salman Khan",age:30}),
+(m1:movie1{title:"Devdas",release_year:1996}),
+(m2:movie2{title:"Dil_to_pagal_hai",release_year:1998}),
+(m3:movie3{title:"movie3",release_year:2015}),
+(r1:role1{name:"Lead_Role"}),
+(r2:role2{name:"Supporting_role"}),
+(p1:productor1{name:"Karan_Johar",city:"Mumbai"}),
+(p2:productor2{name:"Fera_Khan",city:"Pune"}),
+(f1:finance1{name:"Neha_patil",buget:2000000}),
+(f2:finance2{name:"vinay_dixit",buget:40000000}),
+(d1:director1{name:"Sanjay_Leela_Bhansali",nomd:40}),
+(d2:director2{name:"Devid_Dhavan",nomd:20}),
+(c1:critics1{name:"abc xyz",np:"Times_Of_India"}),
+(c2:critics2{name:"pqr uvw",np:"Sakal"}),
+
+(a1)-[:ACTS_IN]->(m1)-[:DIRECTED_BY]->(d1)-[:DIRECT]->(a1),
+(a2)-[:ACTS_IN]->(m1),
+(a3)-[:ACTS_IN]->(m1),
+(p1)-[:PRODUCES]->(m2)-[:DIRECTED_BY]->(d2)-[:DIRECT]->(a4)-[:ACTS_IN]->(m2)-[:FINANCED_BY]->(f1),
+(p2)-[:PRODUCES]->(m3)-[:DIRECTED_BY]->(d1)-[:DIRECT]->(a4)-[:ACTS_IN]->(m3)-[:FINANCED_BY]->(f1),
+(a3)-[:ACTS_IN]->(m2),
+(a1)-[:ACTS_IN]->(m3),
+(a4)-[:ACTS_IN]->(m3),
+(a3)-[:ACTS_IN]->(m3),
+(a1)-[:PERFORMS]->(r1),
+(a2)-[:PERFORMS]->(r2),
+(a3)-[:PERFORMS]->(r2),
+(a4)-[:PERFORMS]->(r1),
+(m1)-[:FINANCED_BY]->(f2),
+(f1)-[:FINANCE]->(d1),
+(f2)-[:FINANCE]->(d2),
+(f1)-[:FINANCE]->(d1),
+(a1)-[:GET_INSPIRED_BY]->(a4),
+(a2)-[:GET_INSPIRED_BY]->(a3),
+(a3)-[:GET_INSPIRED_BY]->(a2),
+(a4)-[:GET_INSPIRED_BY]->(a1),
+(p2)-[:PRODUCES]->(m2),
+(p2)-[:PRODUCES]->(m1),
+(c1)-[:REVIWES]->(m2),
+(c2)-[:REVIWES]->(m2),
+(c1)-[:REVIWES]->(m1),
+(c2)-[:REVIWES]->(m1),
+(c1)-[:REVIWES]->(m3),
+(c2)-[:REVIWES]->(m3)
+
+RETURN *
+
+---------------------------------------------------------------------------------------------
+Queries:
+---------------------------------------------------------------------------------------------
+
+a) Find all actors who have acted in a movie “…….”
+	MATCH (actors)-[:ACTS_IN]->(movie:movie1) RETURN actors , movie
+
+---------------------------------------------------------------------------------------------
+b) Find all reviewer pairs, one following the other and both reviewing the same
+movie, and return entire subgraphs.
+	MATCH (reviewers)-[:REVIWES]->(movies)
+	RETURN reviewers , movies
+
+---------------------------------------------------------------------------------------------
+c) Find all actors that acted in a movie together after 2010 and return the actor
+names and movie node
+	MATCH (actors)-[:ACTS_IN]->(movies)
+	WHERE movies.release_year >2010
+	RETURN actors.name , movies
+	
+---------------------------------------------------------------------------------------------
+d) Find all movies produced by “ …….”
+	MATCH (productor:productor2{name:"Fera_Khan"})-[:PRODUCES]->(movie) 
+	RETURN movie.title AS movies,productor.name 
+---------------------------------------------------------------------------------------------
