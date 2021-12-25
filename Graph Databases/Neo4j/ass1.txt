@@ -1,0 +1,43 @@
+1. Library Database :
+
+CREATE (b1:book1{name:"Solo_Leveling",published:2010}),
+(b2:book2{name:"Chainsaw_man",published:2019}),
+(r1:reader1{name:"Mr.Joshi",email:"abc@gmail.com"}),
+(r2:reader2{name:"xyz",email:"xyz@gmail.com"}),
+(a1:author1{name:"John_le_Carrie",born:"1-10-1986",died:"5-8-2015",city:"mumbai"}),
+(a2:author2{name:"Gaham_Ghen",born:"2-05-1906",died:"5-04-1996",city:"Pune"}),
+(a3:author3{name:"Yashwant_Kanetkar",born:"20-01-1915",died:"12-07-1996",city:"Delhi"}),
+(pb1:publisher1{name:"Neha_Dhupiya",city:"Nagpur"}),
+(pb2:publisher2{name:"Ranvijay Singh",city:"Punjab"}),
+(r1)-[:ISSUED]->(b2),
+(r1)-[:READ]->(b2),
+(r1)-[:RECOMMENED {date:5-7-1011}]->(b1),
+(a1)-[:WROTE]->(b1),
+(a2)-[:WROTE]->(b2),
+(r2)-[:RECOMMENED{date:9-9-2011}]->(b1),
+(r1)-[:ISSUED]->(b1),
+(r2)-[:READ]->(b1),
+(r1)-[:RECOMMENED{date:3-2-2011}]->(b2),
+(b1)-[:PUBLISHED_BY]->(pb1),
+(b2)-[:PUBLISHED_BY]->(pb2),
+(pb1)-[:LIKES]->(a3)
+RETURN *
+------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Queries:
+------------------------------------------------------------------------------------------------------------------------------------------------------------------
+a) List all people, who have issued a book “……”
+	MATCH (n)-[:ISSUED]->(book:book1{name:"Solo_Leveling"}) RETURN n,book
+-----------------------------------------------------------------------------------------------------------------------------------------
+b) Count the number of people who have read “ ….”
+	MATCH(reader)-[No_of_people_who_read_book:READ]->(book:book2{name:"Chainsaw_man"}) RETURN reader,book,COUNT(No_of_people_who_read_book)
+-----------------------------------------------------------------------------------------------------------------------------------------
+c) Add a property “Number of books issued “ for Mr. Joshi and set its value as the
+count
+	MATCH(r1:reader{name:"Mr.Joshi"})
+	WHERE ID(r1) = 2
+	SET r1.Number_of_books_issued = "count"
+	RETURN r1
+-----------------------------------------------------------------------------------------------------------------------------------------
+d) List the names of publishers from pune city.
+	MATCH(publishers)<-[:PUBLISHED_BY]-(book) WHERE publishers.city="Nagpur" RETURN publishers,book
+  -----------------------------------------------------------------------------------------------------------------------------------------
